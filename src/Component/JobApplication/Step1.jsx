@@ -16,31 +16,31 @@ const Step1 = ({ formData, handleChange, handleNext }) => {
         <h2>Step 1: Personal Information</h2>
         <Form.Group controlId='name'>
           <Form.Label>Name:</Form.Label>
-          <Form.Control type='text' name='name' value={name} onChange={handleChange} />
+          <Form.Control type='text' name='name' value={name} onChange={handleChange} required />
         </Form.Group>
         <Form.Group controlId='email'>
           <Form.Label>Email:</Form.Label>
-          <Form.Control type='email' name='email' value={email} onChange={handleChange} />
+          <Form.Control type='email' name='email' value={email} onChange={handleChange} required  />
         </Form.Group>
         <Form.Group controlId='phone'>
           <Form.Label>Phone:</Form.Label>
-          <Form.Control type='tel' name='phone' value={phone} onChange={handleChange} />
+          <Form.Control type='tel' name='phone' value={phone} onChange={handleChange} required  />
         </Form.Group>
         <Form.Group controlId='address'>
           <Form.Label>Address:</Form.Label>
-          <Form.Control type='text' name='address' value={address} onChange={handleChange} />
+          <Form.Control type='text' name='address' value={address} onChange={handleChange} required  />
         </Form.Group>
         <Form.Group controlId='city'>
           <Form.Label>City:</Form.Label>
-          <Form.Control type='text' name='city' value={city} onChange={handleChange} />
+          <Form.Control type='text' name='city' value={city} onChange={handleChange} required  />
         </Form.Group>
         <Form.Group controlId='state'>
           <Form.Label>State:</Form.Label>
-          <Form.Control type='text' name='state' value={state} onChange={handleChange} />
+          <Form.Control type='text' name='state' value={state} onChange={handleChange} required />
         </Form.Group>
         <Form.Group controlId='zip'>
           <Form.Label>Zip:</Form.Label>
-          <Form.Control type='text' name='zip' value={zip} onChange={handleChange} />
+          <Form.Control type='text' name='zip' value={zip} onChange={handleChange} required  />
         </Form.Group>
         <Form.Group controlId='linkedIn'>
           <Form.Label>LinkedIn URL:</Form.Label>

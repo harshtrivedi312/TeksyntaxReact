@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../Homepage/Navbar/Navbar";
 import Footer from "../Homepage/Footer/Footer";
+import ThankYouPopup from "./ThankYouPopup";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -12,6 +13,7 @@ import emailjs from "@emailjs/browser";
 const JobApplicationForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
+    references: [], // Initialize references as an empty array
     name: "",
     email: "",
     phone: "",
@@ -36,64 +38,83 @@ const JobApplicationForm = () => {
     military: "",
     privacyAgreement: false,
   });
+  const [formSubmitted, setFormSubmitted] = useState(false); // New state to track form submission
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
-  };
-
-  const handlePrev = () => {
-    setStep((prevStep) => prevStep - 1);
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const updatedValue = type === "checkbox" ? checked : value;
-
     setFormData((prevData) => ({
       ...prevData,
-      [name]: updatedValue,
+      ...formData,
+    }));
+  };
+  const handlePrev = () => {
+    setStep((prevStep) => prevStep - 1);
+    setFormData((prevData) => ({
+      ...prevData,
+      ...formData,
     }));
   };
 
+  const handleChange = (e) => {
+    const { name, value, type, checked, files } = e.target;
+
+    // Check if the input is a file input and handle it separately
+    if (type === "file") {
+      const file = files && files[0];
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: file,
+      }));
+    } else {
+      const updatedValue = type === "checkbox" ? checked : value;
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: updatedValue,
+      }));
+    }
+  };
   const handleFormSubmission = () => {
     // Send the form data via EmailJS
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      address: formData.address,
-      city: formData.city,
-      state: formData.state,
-      zip: formData.zip,
-      linkedIn: formData.linkedIn,
-      website: formData.website,
-      education: formData.education,
-      university: formData.university,
-      graduationYear: formData.graduationYear,
-      honors: formData.honors,
-      company: formData.company,
-      position: formData.position,
-      years: formData.years,
-      skills: formData.skills,
-      certifications: formData.certifications,
-      gender: formData.gender,
-      ethnicity: formData.ethnicity,
-      disability: formData.disability,
-      military: formData.military,
-      privacyAgreement: formData.privacyAgreement,
-      coverLetter: formData.coverLetter,
-      resume: formData.resume,
-    };
+
+    const formDataToSend = new FormData();
+
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("phone", formData.phone);
+    formDataToSend.append("address", formData.address);
+    formDataToSend.append("city", formData.city);
+    formDataToSend.append("state", formData.state);
+    formDataToSend.append("zip", formData.zip);
+    formDataToSend.append("linkedIn", formData.linkedIn);
+    formDataToSend.append("website", formData.website);
+    formDataToSend.append("education", formData.education);
+    formDataToSend.append("university", formData.university);
+    formDataToSend.append("graduationYear", formData.graduationYear);
+    formDataToSend.append("honors", formData.honors);
+    formDataToSend.append("company", formData.company);
+    formDataToSend.append("position", formData.position);
+    formDataToSend.append("years", formData.years);
+    formDataToSend.append("skills", formData.skills);
+    formDataToSend.append("certifications", formData.certifications);
+    formDataToSend.append("references", JSON.stringify(formData.references));
+    formDataToSend.append("Gender", formData.gender);
+    formDataToSend.append("ethnicity", formData.ethnicity);
+    formDataToSend.append("disability", formData.disability);
+    formDataToSend.append("military", formData.military);
+    formDataToSend.append("privacyAgreement", formData.privacyAgreement);
+    formDataToSend.append("coverLetter", formData.coverLetter);
+    formDataToSend.append("resume", formData.resume);
 
     emailjs
-      .send(
-        "<service_il7xrjd",
+      .sendForm(
+        "service_il7xrjd",
         "template_qp78sdk",
-        templateParams,
+        formDataToSend,
         "lSgpaCOGPnSdQVq_-"
       )
       .then((result) => {
         console.log("Application sent successfully", result.text);
+        setFormSubmitted(true);
         // Reset the form or navigate to a success page
       })
       .catch((error) => {
@@ -139,7 +160,7 @@ const JobApplicationForm = () => {
         return (
           <Step4
             formData={formData}
-            handleChange={handleChange}
+            setFormData={setFormData}
             handleNext={handleNext}
             handlePrev={handlePrev}
           />
@@ -176,6 +197,9 @@ const JobApplicationForm = () => {
       <div className="my-5" style={{ backgroundColor: "#495057" }}>
         <Footer />
       </div>
+      {formSubmitted && (
+        <ThankYouPopup onClose={() => setFormSubmitted(false)} />
+      )}
     </div>
   );
 };

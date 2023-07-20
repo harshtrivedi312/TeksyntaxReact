@@ -169,16 +169,16 @@ const Footer = () => {
           <div className="social-links d-none d-md-flex align-items-center justify-content-center socialIcons">
             <ul className="socialIcons">
               <li className="facebook">
-                <a href=""><i class="fa-brands fa-facebook"></i>Facebook</a>
+                <a href=""><i className="fa-brands fa-facebook"></i>Facebook</a>
               </li>
               <li className="twitter">
-                <a href=""><i class="fa-brands fa-square-twitter"></i>Twitter</a>
+                <a href=""><i className="fa-brands fa-square-twitter"></i>Twitter</a>
               </li>
               <li className="instagram">
-                <a href=""><i class="fa-brands fa-instagram"></i>Instagram</a>
+                <a href=""><i className="fa-brands fa-instagram"></i>Instagram</a>
               </li>
               <li className="linkedin">
-                <a href=""><i class="fa-brands fa-linkedin"></i>Linkedin</a>
+                <a href=""><i className="fa-brands fa-linkedin"></i>Linkedin</a>
               </li>
             </ul>
           </div>

@@ -3,8 +3,8 @@ import React from 'react'
 export default function info() {
   return (
     
-    <div class="container">
-    <div class="text-center text-secondary p-4">
+    <div className="container">
+    <div className="text-center text-secondary p-4">
       <h1>Recognize your Potential</h1>
       <p>
         A significant problem in tech education is that most bootcamps require

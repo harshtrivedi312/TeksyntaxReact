@@ -1,24 +1,19 @@
-import React from 'react';
-import { Container, Table, Button } from 'react-bootstrap';
+import React from "react";
+import { Container, Table, Button } from "react-bootstrap";
 
 const Step6 = ({ formData, handlePrev, handleConfirm }) => {
-  const handleConfirmClick = () => {
-    // Handle form submission or confirmation logic here
-    handleConfirm();
-  };
-
-  const handlePreviousStepClick = () => {
-    handlePrev(); // Navigate to the previous step without form submission
-  };
-
+  // Destructure the references array from formData
+  // const { company, position, years, skills, certifications, reference  ,...otherData } = formData;
+  const references = formData.reference || []; // If references is undefined, set it to an empty array
   return (
-    <Container className='d-flex justify-content-center align-items-center h-100'>
-      <div className='confirmation-box'>
-        <h5>Step 6: Review and Confirm</h5>
-        <Table striped bordered hover>
+    <Container className="d-flex justify-content-center align-items-center h-100">
+      <div>
+        <h5>Step 6: Review Your Application</h5>
+        <Table striped bordered responsive>
           <tbody>
+            <th>Personal Information</th>
             <tr>
-              <td>Name:</td>
+              <td>Full Name:</td>
               <td>{formData.name}</td>
             </tr>
             <tr>
@@ -42,19 +37,20 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>{formData.state}</td>
             </tr>
             <tr>
-              <td>Zip:</td>
+              <td>ZIP:</td>
               <td>{formData.zip}</td>
             </tr>
             <tr>
-              <td>LinkedIn:</td>
+              <td>LinkedIn Profile:</td>
               <td>{formData.linkedIn}</td>
             </tr>
             <tr>
-              <td>Website:</td>
+              <td>Personal Website:</td>
               <td>{formData.website}</td>
             </tr>
+            <th>Education Information</th>
             <tr>
-              <td>Highest Education:</td>
+              <td>Education Level:</td>
               <td>{formData.education}</td>
             </tr>
             <tr>
@@ -62,13 +58,14 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>{formData.university}</td>
             </tr>
             <tr>
-              <td>Year of Graduation:</td>
+              <td>Graduation Year:</td>
               <td>{formData.graduationYear}</td>
             </tr>
             <tr>
-              <td>Honors/Awards:</td>
+              <td>Honors:</td>
               <td>{formData.honors}</td>
             </tr>
+            <th>Work Information</th>
             <tr>
               <td>Company:</td>
               <td>{formData.company}</td>
@@ -89,6 +86,25 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>Certifications:</td>
               <td>{formData.certifications}</td>
             </tr>
+            <th>Professional References</th>
+
+            {/* Render the references if available */}
+            {references.length > 0 && (
+              <tr>
+                <td>References:</td>
+                <td>
+                  <ul>
+                    {references.map((reference, index) => (
+                      <li key={index}>
+                        {`Company: ${reference.company}, Manager: ${reference.manager}, Email: ${reference.email}, Phone: ${reference.phone}`}
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            )}
+            <th>EEO and Diversity: </th>
+
             <tr>
               <td>Gender:</td>
               <td>{formData.gender}</td>
@@ -102,22 +118,26 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>{formData.disability}</td>
             </tr>
             <tr>
-              <td>Military Veteran:</td>
+              <td>Military Service:</td>
               <td>{formData.military}</td>
             </tr>
             <tr>
               <td>Privacy Agreement:</td>
-              <td>{formData.privacyAgreement ? 'Accepted' : 'Not Accepted'}</td>
+              <td>{formData.privacyAgreement ? "Yes" : "No"}</td>
             </tr>
           </tbody>
         </Table>
 
-        <div style={{ marginTop: '15px' }}>
-          <Button variant='warning' className='prev-step' onClick={handlePreviousStepClick}>
+        <div style={{ marginTop: "15px" }}>
+          <Button variant="warning" className="prev-step" onClick={handlePrev}>
             Previous
           </Button>
-          <Button variant='primary' className='confirm-btn mx-3' onClick={handleConfirmClick}>
-            Submit
+          <Button
+            variant="primary"
+            className="next-step mx-3"
+            onClick={handleConfirm}
+          >
+            Confirm & Submit
           </Button>
         </div>
       </div>
