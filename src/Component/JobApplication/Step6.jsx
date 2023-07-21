@@ -5,7 +5,8 @@ import { Container, Table, Button } from "react-bootstrap";
 const Step6 = ({ formData, handlePrev, handleConfirm }) => {
   // Destructure the references array from formData
   // const { company, position, years, skills, certifications, reference  ,...otherData } = formData;
-  const references = formData.reference || []; // If references is undefined, set it to an empty array
+  const references = formData.references || [];
+ // If references is undefined, set it to an empty array
   return (
     <Container className="d-flex justify-content-center align-items-center h-100">
       <div>
@@ -148,7 +149,7 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
 
 Step6.propTypes = {
   formData: PropTypes.shape({
-    reference: PropTypes.arrayOf(
+    references: PropTypes.arrayOf(
       PropTypes.shape({
         company: PropTypes.string.isRequired,
         manager: PropTypes.string.isRequired,

@@ -37,28 +37,22 @@ const JobApplicationForm = () => {
     disability: "",
     military: "",
     privacyAgreement: false,
+    coverLetter: null,
+    resume: null,
   });
   const [formSubmitted, setFormSubmitted] = useState(false); // New state to track form submission
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
-    setFormData((prevData) => ({
-      ...prevData,
-      ...formData,
-    }));
   };
+
   const handlePrev = () => {
     setStep((prevStep) => prevStep - 1);
-    setFormData((prevData) => ({
-      ...prevData,
-      ...formData,
-    }));
   };
 
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
 
-    // Check if the input is a file input and handle it separately
     if (type === "file") {
       const file = files && files[0];
       setFormData((prevData) => ({
@@ -73,60 +67,44 @@ const JobApplicationForm = () => {
       }));
     }
   };
+
   const handleFormSubmission = () => {
-    // Send the form data via EmailJS
+    const formDataForEmailJs = new FormData();
 
-    const formDataToSend = new FormData();
+    ["coverLetter", "resume"].forEach((fileKey) => {
+      if (formData[fileKey]) {
+        const fileAsBlob = new Blob([formData[fileKey]], { type: formData[fileKey].type });
+        formDataForEmailJs.append(fileKey, fileAsBlob, formData[fileKey].name);
+      }
+    });
 
-    formDataToSend.append("name", formData.name);
-    formDataToSend.append("email", formData.email);
-    formDataToSend.append("phone", formData.phone);
-    formDataToSend.append("address", formData.address);
-    formDataToSend.append("city", formData.city);
-    formDataToSend.append("state", formData.state);
-    formDataToSend.append("zip", formData.zip);
-    formDataToSend.append("linkedIn", formData.linkedIn);
-    formDataToSend.append("website", formData.website);
-    formDataToSend.append("education", formData.education);
-    formDataToSend.append("university", formData.university);
-    formDataToSend.append("graduationYear", formData.graduationYear);
-    formDataToSend.append("honors", formData.honors);
-    formDataToSend.append("company", formData.company);
-    formDataToSend.append("position", formData.position);
-    formDataToSend.append("years", formData.years);
-    formDataToSend.append("skills", formData.skills);
-    formDataToSend.append("certifications", formData.certifications);
-    formDataToSend.append("references", JSON.stringify(formData.references));
-    formDataToSend.append("Gender", formData.gender);
-    formDataToSend.append("ethnicity", formData.ethnicity);
-    formDataToSend.append("disability", formData.disability);
-    formDataToSend.append("military", formData.military);
-    formDataToSend.append("privacyAgreement", formData.privacyAgreement);
-    formDataToSend.append("coverLetter", formData.coverLetter);
-    formDataToSend.append("resume", formData.resume);
+    for (let key in formData) {
+      if (key !== "coverLetter" && key !== "resume") {
+        const value = formData[key];
+        formDataForEmailJs.append(key, Array.isArray(value) ? JSON.stringify(value) : value);
+      }
+    }
 
     emailjs
-      .sendForm(
+      .send(
         "service_il7xrjd",
         "template_qp78sdk",
-        formDataToSend,
+        formDataForEmailJs,
         "lSgpaCOGPnSdQVq_-"
       )
       .then((result) => {
         console.log("Application sent successfully", result.text);
         setFormSubmitted(true);
-        // Reset the form or navigate to a success page
       })
       .catch((error) => {
         console.error("Application sending failed", error);
-        // Handle error case or show error message to the user
       });
   };
 
   const handleConfirm = () => {
-    // Handle form confirmation logic
     handleFormSubmission();
   };
+
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -158,12 +136,12 @@ const JobApplicationForm = () => {
       case 4:
         return (
           <Step4
-          formData={formData}
-          handleChange={handleChange} // Pass the handleChange function as a prop
-          handleNext={handleNext}
-          handlePrev={handlePrev}
-        />
-      );
+            formData={formData}
+            handleChange={handleChange}
+            handleNext={handleNext}
+            handlePrev={handlePrev}
+          />
+        );
       case 5:
         return (
           <Step5
@@ -185,6 +163,7 @@ const JobApplicationForm = () => {
         return null;
     }
   };
+
   return (
     <div>
       <NavBar />
@@ -196,10 +175,15 @@ const JobApplicationForm = () => {
         <Footer />
       </div>
       {formSubmitted && (
-        <ThankYouPopup onClose={() => setFormSubmitted(false)} />
+        <ThankYouPopup
+          handleClose={() => {
+            setFormSubmitted(false);
+            setStep(1);
+            setFormData({}); // Clear the form
+          }}
+        />
       )}
     </div>
   );
 };
-
 export default JobApplicationForm;
