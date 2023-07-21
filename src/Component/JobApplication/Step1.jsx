@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, Form, Button } from 'react-bootstrap';
 
 const Step1 = ({ formData, handleChange, handleNext }) => {
@@ -6,7 +7,6 @@ const Step1 = ({ formData, handleChange, handleNext }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add any validation logic here before proceeding to the next step
     handleNext();
   };
 
@@ -56,6 +56,23 @@ const Step1 = ({ formData, handleChange, handleNext }) => {
       </Form>
     </Container>
   );
+};
+
+// Define prop types
+Step1.propTypes = {
+  formData: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+    zip: PropTypes.string.isRequired,
+    linkedIn: PropTypes.string,
+    website: PropTypes.string,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleNext: PropTypes.func.isRequired,
 };
 
 export default Step1;

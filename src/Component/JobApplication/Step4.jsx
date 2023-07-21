@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Container, Form, Button } from 'react-bootstrap';
 
-const Step4 = ({ formData, handleNext, handlePrev }) =>{
+const Step4 = ({ formData, handleChange, handleNext, handlePrev }) => {
   const [company1, setCompany1] = useState(formData.references[0]?.company || '');
   const [manager1, setManager1] = useState(formData.references[0]?.manager || '');
   const [email1, setEmail1] = useState(formData.references[0]?.email || '');
@@ -20,13 +21,15 @@ const Step4 = ({ formData, handleNext, handlePrev }) =>{
       { company: company2, manager: manager2, email: email2, phone: phone2 },
     ];
 
-    // setFormData((prevFormData) => ({
-    //   ...prevFormData,
-    //   references: updatedReferences,
-    // }));
+    // Call the handleChange function from the parent component to update the references in the form data
+    handleChange({ target: { name: 'references', value: updatedReferences } });
 
+    // Now call handleNext() to move to the next step
     handleNext();
   };
+
+  
+  
 
   return (
     <Container className='d-flex justify-content-center align-items-center h-100'>
@@ -135,5 +138,24 @@ const Step4 = ({ formData, handleNext, handlePrev }) =>{
     </Container>
   );
 };
+
+
+// Define prop types
+Step4.propTypes = {
+  formData: PropTypes.shape({
+    references: PropTypes.arrayOf(
+      PropTypes.shape({
+        company: PropTypes.string.isRequired,
+        manager: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        phone: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleNext: PropTypes.func.isRequired,
+  handlePrev: PropTypes.func.isRequired,
+};
+
 
 export default Step4;

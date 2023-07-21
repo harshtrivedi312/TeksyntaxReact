@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Container, Table, Button } from "react-bootstrap";
 
 const Step6 = ({ formData, handlePrev, handleConfirm }) => {
@@ -143,6 +144,44 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
       </div>
     </Container>
   );
+};
+
+Step6.propTypes = {
+  formData: PropTypes.shape({
+    reference: PropTypes.arrayOf(
+      PropTypes.shape({
+        company: PropTypes.string.isRequired,
+        manager: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        phone: PropTypes.string.isRequired,
+      })
+    ),
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+    zip: PropTypes.string.isRequired,
+    linkedIn: PropTypes.string.isRequired,
+    website: PropTypes.string.isRequired,
+    education: PropTypes.string.isRequired,
+    university: PropTypes.string.isRequired,
+    graduationYear: PropTypes.string.isRequired,
+    honors: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    years: PropTypes.string.isRequired,
+    skills: PropTypes.string.isRequired,
+    certifications: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
+    ethnicity: PropTypes.string.isRequired,
+    disability: PropTypes.string.isRequired,
+    military: PropTypes.string.isRequired,
+    privacyAgreement: PropTypes.bool.isRequired,
+  }).isRequired,
+  handlePrev: PropTypes.func.isRequired,
+  handleConfirm: PropTypes.func.isRequired,
 };
 
 export default Step6;

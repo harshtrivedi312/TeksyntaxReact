@@ -3,7 +3,7 @@ import manImage from "../../../Assets/images/Hero/HeroOverlay.png";
 import backGround from "../../../Assets/images/Hero/Hero_Image.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import axios from 'axios';
+
 
 function HeroImage() {
   const [isOpen, setIsOpen] = useState(false);  
@@ -105,7 +105,7 @@ fetch('http://localhost:3030/api/PostCourseBrochureDownload', {
               <div className="modal-body">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
-                    <label>Name</label>
+                    <label htmlFor="name">Name</label>
                     <input
                       type="text"
                       className="form-control"
@@ -115,7 +115,7 @@ fetch('http://localhost:3030/api/PostCourseBrochureDownload', {
                     />
                   </div>
                   <div className="form-group">
-                    <label>Email</label>
+                    <label htmlFor="email">Email</label>
                     <input
                       type="email"
                       className="form-control"
@@ -125,7 +125,7 @@ fetch('http://localhost:3030/api/PostCourseBrochureDownload', {
                     />
                   </div>
                   <div className="form-group">
-                    <label>Telephone</label>
+                    <label htmlFor="tel">Telephone</label>
                     <input
                       type="tel"
                       className="form-control"

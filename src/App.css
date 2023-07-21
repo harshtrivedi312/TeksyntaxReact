@@ -683,3 +683,30 @@
   cursor: pointer;
 }
 
+/* styles.css (or your preferred CSS file) */
+.image-marquee-container {
+  background-color: rgb(240, 240, 240);
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-marquee-content {
+  display: flex;
+  animation: marquee-animation 30s linear infinite;
+}
+
+.image-marquee-content img {
+  width: auto;
+  height: 200px;
+  margin-right: 20px;
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

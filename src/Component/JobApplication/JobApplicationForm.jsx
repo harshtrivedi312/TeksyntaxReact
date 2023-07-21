@@ -127,7 +127,6 @@ const JobApplicationForm = () => {
     // Handle form confirmation logic
     handleFormSubmission();
   };
-
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -159,12 +158,12 @@ const JobApplicationForm = () => {
       case 4:
         return (
           <Step4
-            formData={formData}
-            setFormData={setFormData}
-            handleNext={handleNext}
-            handlePrev={handlePrev}
-          />
-        );
+          formData={formData}
+          handleChange={handleChange} // Pass the handleChange function as a prop
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+        />
+      );
       case 5:
         return (
           <Step5
@@ -186,7 +185,6 @@ const JobApplicationForm = () => {
         return null;
     }
   };
-
   return (
     <div>
       <NavBar />

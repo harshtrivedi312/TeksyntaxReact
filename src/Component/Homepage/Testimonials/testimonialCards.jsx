@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const TestimonialCard = ({ imgSrc, name, rating, description }) => {
   return (
@@ -21,6 +22,14 @@ const TestimonialCard = ({ imgSrc, name, rating, description }) => {
       </div>
       </div>
   );
+};
+
+// Define prop types
+TestimonialCard.propTypes = {
+  imgSrc: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default TestimonialCard;

@@ -67,7 +67,7 @@ const ContactSection = () => {
                 <p>Talk about Financial options</p>
               </div>
               <div className="text-center align-items-center pb-4">
-                <a className="btn btn-md btn-warning">Schedule a call</a>
+                <a href='/' className="btn btn-md btn-warning">Schedule a call</a>
               </div>
             </div>
           </div>

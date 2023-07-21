@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 const ThankYouPopup = ({ onClose }) => {
   return (
@@ -9,6 +11,10 @@ const ThankYouPopup = ({ onClose }) => {
       </div>
     </div>
   );
+};
+
+ThankYouPopup.propTypes = {
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ThankYouPopup;

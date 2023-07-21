@@ -43,13 +43,13 @@ const Footer = () => {
                 <div className="cta_content">
                   <h3>Have Any Project in Mind ?</h3>
                   <p>
-                    "Collaborate with the Best: Hire Us to Turn Your Project Vision into Reality!"
+                  &quot;Collaborate with the Best: Hire Us to Turn Your Project Vision into Reality!&quot;
                   </p>
                 </div>
               </div>
               <div className="col-md-6 mx-auto">
                 <div className="button_box">
-                  <a href="#" className="btn btn-warning">Hire Us</a>
+                  <a href="http://teksyntaxinc.com/" className="btn btn-warning">Hire Us</a>
                 </div>
               </div>
             </div>
@@ -81,9 +81,9 @@ const Footer = () => {
                   <div className="mx-5">
                     <div className="input-group mb-1 mt-1">
                     <div className="input-group mb-1 mt-1">
-        <label className="p-2" style={{ fontWeight: 700 }}>
+        <h3 className="p-2" style={{ fontWeight: 700 }}>
           Subscribe to Newsletter
-        </label>
+        </h3>
         <input
           type="email"
           className="form-control"
@@ -103,11 +103,11 @@ const Footer = () => {
         </button>
       </div></div>
                     <span className="text-center">
-                      <p>By sharing your email, you acknowledge our <a href="#">Privacy Policy</a> and <a href="#">Terms
+                      <p>By sharing your email, you acknowledge our <a href="https://www.termsfeed.com/live/885853a7-633b-4aa6-8759-ba647a08d9f8">Privacy Policy</a> and <a href="https://www.termsfeed.com/live/885853a7-633b-4aa6-8759-ba647a08d9f8">Terms
                           of Service</a>.</p>
                     </span>
                   </div>
-                  {/* Social Media */}
+                
                 </div>
               </div>
               <div className="col-lg-2">
@@ -116,11 +116,11 @@ const Footer = () => {
                     <h4>Company</h4>
                   </div>
                   <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">FAQ's</a></li>
+                    <li><a href="http://teksyntaxinc.com/">About</a></li>
+                    <li><a href="http://teksyntaxinc.com/">Services</a></li>
+                    <li><a href="http://teksyntaxinc.com/">Careers</a></li>
+                    <li><a href="http://teksyntaxinc.com/">Blog</a></li>
+                    <li><a href="http://teksyntaxinc.com/">FAQ&apos;s</a></li>
                   </ul>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const Footer = () => {
                       </div>
                       <div className="info">
                         <p>
-                          <a href="mailto:info@deneb.com">info@TekSyntaxinc.com</a>
+                          <a href="mailto:information@teksyntaxinc.com.com">info@TekSyntaxinc.com</a>
                         </p>
                        
                       </div>
@@ -169,16 +169,16 @@ const Footer = () => {
           <div className="social-links d-none d-md-flex align-items-center justify-content-center socialIcons">
             <ul className="socialIcons">
               <li className="facebook">
-                <a href=""><i className="fa-brands fa-facebook"></i>Facebook</a>
+                <a href="https://www.facebook.com/"><i className="fa-brands fa-facebook"></i>Facebook</a>
               </li>
               <li className="twitter">
-                <a href=""><i className="fa-brands fa-square-twitter"></i>Twitter</a>
+                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Den"><i className="fa-brands fa-square-twitter"></i>Twitter</a>
               </li>
               <li className="instagram">
-                <a href=""><i className="fa-brands fa-instagram"></i>Instagram</a>
+                <a href="https://www.instagram.com/"><i className="fa-brands fa-instagram"></i>Instagram</a>
               </li>
               <li className="linkedin">
-                <a href=""><i className="fa-brands fa-linkedin"></i>Linkedin</a>
+                <a href="https://www.linkedin.com/company/collaborait/mycompany/"><i className="fa-brands fa-linkedin"></i>Linkedin</a>
               </li>
             </ul>
           </div>
@@ -201,11 +201,11 @@ const Footer = () => {
             <div className="row">
               <hr />
               <div className="RegulatoryInfo" style={{ display: 'flex' }}>
-                <a href="#">
+                <a href="http://teksyntaxinc.com/">
                   Regulatory Information
                 </a>
-                <a href="#"> Terms & Privacy</a>
-                <a href="#"> EEO Statement and Legal Notices</a>
+                <a href="https://www.termsfeed.com/live/885853a7-633b-4aa6-8759-ba647a08d9f8"> Terms & Privacy</a>
+                <a href="https://www.termsfeed.com/live/885853a7-633b-4aa6-8759-ba647a08d9f8"> EEO Statement and Legal Notices</a>
                 <p> Made with <i className="fa-solid fa-heart"></i> in Virginia</p>
               </div>
             </div>

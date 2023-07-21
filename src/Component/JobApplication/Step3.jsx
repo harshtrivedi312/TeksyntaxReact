@@ -1,42 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { Container, Form, Button } from "react-bootstrap";
 
 const Step3 = ({ formData, handleChange, handleNext, handlePrev }) => {
- 
-
-  const { resume, coverLetter,company,position,years,skills,certifications} = formData;
+  const { company, position, years, skills, certifications } = formData;
 
   const handleTextChange = (e) => {
-    const { name, value } = e.target;
-    handleChange(name, value);
+    handleChange(e); // Pass the event object to the handleChange function
   };
 
   const handleResumeChange = (e) => {
     const file = e.target.files && e.target.files[0];
     if (file) {
-      handleChange({
-        target: {
-          name: "resume",
-          type: "file",
-          value: file,
-        },
-      });
+      handleChange(e); // Pass the event object to the handleChange function
     }
   };
-  
+
   const handleCoverLetterChange = (e) => {
     const file = e.target.files && e.target.files[0];
     if (file) {
-      handleChange({
-        target: {
-          name: "coverLetter",
-          type: "file",
-          value: file,
-        },
-      });
+      handleChange(e); // Pass the event object to the handleChange function
     }
   };
- 
 
   const handlePreviousStepClick = () => {
     handlePrev();
@@ -51,31 +36,58 @@ const Step3 = ({ formData, handleChange, handleNext, handlePrev }) => {
       <Form id="step3">
         <h5>Step 3: Work Experience</h5>
         {/* The fields below are editable */}
-        <Form.Group controlId='company'>
+        <Form.Group controlId="company">
           <Form.Label>Company:</Form.Label>
-          <Form.Control type='text' value={company}  onChange={handleTextChange} required />
+          <Form.Control
+            type="text"
+            value={company}
+            name="company"
+            onChange={handleTextChange}
+            required
+          />
         </Form.Group>
 
-        <Form.Group controlId='position'>
+        <Form.Group controlId="position">
           <Form.Label>Position:</Form.Label>
-          <Form.Control type='text' value={position}  onChange={handleTextChange} required />
+          <Form.Control
+            type="text"
+            value={position}
+            name="position"
+            onChange={handleTextChange}
+            required
+          />
         </Form.Group>
 
-        <Form.Group controlId='years'>
+        <Form.Group controlId="years">
           <Form.Label>Years of Experience:</Form.Label>
-          <Form.Control type='text' value={years}  onChange={handleTextChange} required />
+          <Form.Control
+            type="text"
+            value={years}
+            name="years"
+            onChange={handleTextChange}
+            required
+          />
         </Form.Group>
 
-        <Form.Group controlId='skills'>
+        <Form.Group controlId="skills">
           <Form.Label>Skills:</Form.Label>
-          <Form.Control as='textarea' value={skills}  onChange={handleTextChange} />
+          <Form.Control
+            as="textarea"
+            value={skills}
+            name="skills"
+            onChange={handleTextChange}
+          />
         </Form.Group>
 
-        <Form.Group controlId='certifications'>
+        <Form.Group controlId="certifications">
           <Form.Label>Certifications:</Form.Label>
-          <Form.Control as='textarea' value={certifications}  onChange={handleTextChange} />
+          <Form.Control
+            as="textarea"
+            value={certifications}
+            name="certifications"
+            onChange={handleTextChange}
+          />
         </Form.Group>
-
 
         <Form.Group controlId="resume">
           <Form.Label>Upload Resume:</Form.Label>
@@ -116,6 +128,22 @@ const Step3 = ({ formData, handleChange, handleNext, handlePrev }) => {
       </Form>
     </Container>
   );
+};
+
+// Define prop types
+Step3.propTypes = {
+  formData: PropTypes.shape({
+    resume: PropTypes.string.isRequired,
+    coverLetter: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    position: PropTypes.string.isRequired,
+    years: PropTypes.string.isRequired,
+    skills: PropTypes.string.isRequired,
+    certifications: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleNext: PropTypes.func.isRequired,
+  handlePrev: PropTypes.func.isRequired,
 };
 
 export default Step3;
