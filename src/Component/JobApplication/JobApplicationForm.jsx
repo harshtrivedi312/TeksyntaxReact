@@ -13,7 +13,7 @@ import emailjs from "@emailjs/browser";
 const JobApplicationForm = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    references: [], // Initialize references as an empty array
+    references: [],
     name: "",
     email: "",
     phone: "",
@@ -37,10 +37,8 @@ const JobApplicationForm = () => {
     disability: "",
     military: "",
     privacyAgreement: false,
-    coverLetter: null,
-    resume: null,
   });
-  const [formSubmitted, setFormSubmitted] = useState(false); // New state to track form submission
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
@@ -51,45 +49,27 @@ const JobApplicationForm = () => {
   };
 
   const handleChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
-
-    if (type === "file") {
-      const file = files && files[0];
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: file,
-      }));
-    } else {
-      const updatedValue = type === "checkbox" ? checked : value;
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: updatedValue,
-      }));
-    }
+    const { name, value, type, checked } = e.target;
+    const updatedValue = type === "checkbox" ? checked : value;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: updatedValue,
+    }));
   };
-
+  
   const handleFormSubmission = () => {
-    const formDataForEmailJs = new FormData();
-
-    ["coverLetter", "resume"].forEach((fileKey) => {
-      if (formData[fileKey]) {
-        const fileAsBlob = new Blob([formData[fileKey]], { type: formData[fileKey].type });
-        formDataForEmailJs.append(fileKey, fileAsBlob, formData[fileKey].name);
-      }
-    });
-
-    for (let key in formData) {
-      if (key !== "coverLetter" && key !== "resume") {
-        const value = formData[key];
-        formDataForEmailJs.append(key, Array.isArray(value) ? JSON.stringify(value) : value);
-      }
-    }
-
+    const templateParams = {
+      ...formData,
+      references: formData.references.map((ref, index) => {
+        return `Reference ${index + 1} - Company: ${ref.company}, Manager: ${ref.manager}, Email: ${ref.email}, Phone: ${ref.phone}`;
+      }).join('\n'),
+    };
+console.log(templateParams);
     emailjs
       .send(
         "service_il7xrjd",
         "template_qp78sdk",
-        formDataForEmailJs,
+        templateParams,
         "lSgpaCOGPnSdQVq_-"
       )
       .then((result) => {
@@ -103,6 +83,37 @@ const JobApplicationForm = () => {
 
   const handleConfirm = () => {
     handleFormSubmission();
+  };
+
+  const handleClose = () => {
+    setFormSubmitted(false);
+    setStep(1);
+    setFormData({
+      references: [],
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+      city: "",
+      state: "",
+      zip: "",
+      linkedIn: "",
+      website: "",
+      education: "",
+      university: "",
+      graduationYear: "",
+      honors: "",
+      company: "",
+      position: "",
+      years: "",
+      skills: "",
+      certifications: "",
+      gender: "",
+      ethnicity: "",
+      disability: "",
+      military: "",
+      privacyAgreement: false,
+    });
   };
 
   const renderStep = () => {
@@ -175,13 +186,7 @@ const JobApplicationForm = () => {
         <Footer />
       </div>
       {formSubmitted && (
-        <ThankYouPopup
-          handleClose={() => {
-            setFormSubmitted(false);
-            setStep(1);
-            setFormData({}); // Clear the form
-          }}
-        />
+        <ThankYouPopup onClose={handleClose} />
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 import React , { useState } from 'react';
 import Logo from '../../../Assets/images/logo/FullLogo.png'
+import { Button } from 'react-bootstrap';
 
 const Footer = () => {
 
@@ -49,7 +50,7 @@ const Footer = () => {
               </div>
               <div className="col-md-6 mx-auto">
                 <div className="button_box">
-                  <a href="http://teksyntaxinc.com/" className="btn btn-warning">Hire Us</a>
+                  <Button className='btn btn-warning' href='/Hire'>Hire Us</Button>
                 </div>
               </div>
             </div>
@@ -81,9 +82,9 @@ const Footer = () => {
                   <div className="mx-5">
                     <div className="input-group mb-1 mt-1">
                     <div className="input-group mb-1 mt-1">
-        <h3 className="p-2" style={{ fontWeight: 700 }}>
+        <p className="p-2" style={{ fontWeight: 700 }}>
           Subscribe to Newsletter
-        </h3>
+        </p>
         <input
           type="email"
           className="form-control"
@@ -185,16 +186,12 @@ const Footer = () => {
         </div>
       </footer>
       {/* End Footer */}
-      {/* Back to top button */}
-      <div id="back-to-top">
-        <i className="fas fa-arrow-up"></i>
-      </div>
-
+     
       <div className="copyright_area">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <div className="copyright_text">
+              <div className="copyright_text text-center">
                 <p> &copy; 2023 TekSyntax Inc. All rights reserved.</p>
               </div>
             </div>

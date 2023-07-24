@@ -3,17 +3,19 @@ import PropTypes from 'prop-types';
 import { Container, Table, Button } from "react-bootstrap";
 
 const Step6 = ({ formData, handlePrev, handleConfirm }) => {
-  // Destructure the references array from formData
-  // const { company, position, years, skills, certifications, reference  ,...otherData } = formData;
   const references = formData.references || [];
- // If references is undefined, set it to an empty array
+
   return (
     <Container className="d-flex justify-content-center align-items-center h-100">
       <div>
         <h5>Step 6: Review Your Application</h5>
         <Table striped bordered responsive>
+          <thead>
+            <tr>
+              <th colSpan="2">Personal Information</th>
+            </tr>
+          </thead>
           <tbody>
-            <th>Personal Information</th>
             <tr>
               <td>Full Name:</td>
               <td>{formData.name}</td>
@@ -50,7 +52,14 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>Personal Website:</td>
               <td>{formData.website}</td>
             </tr>
-            <th>Education Information</th>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colSpan="2">Education Information</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>Education Level:</td>
               <td>{formData.education}</td>
@@ -67,7 +76,14 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>Honors:</td>
               <td>{formData.honors}</td>
             </tr>
-            <th>Work Information</th>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th colSpan="2">Work Information</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>Company:</td>
               <td>{formData.company}</td>
@@ -88,9 +104,14 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
               <td>Certifications:</td>
               <td>{formData.certifications}</td>
             </tr>
-            <th>Professional References</th>
+          </tbody>
 
-            {/* Render the references if available */}
+          <thead>
+            <tr>
+              <th colSpan="2">Professional References</th>
+            </tr>
+          </thead>
+          <tbody>
             {references.length > 0 && (
               <tr>
                 <td>References:</td>
@@ -105,8 +126,14 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
                 </td>
               </tr>
             )}
-            <th>EEO and Diversity: </th>
+          </tbody>
 
+          <thead>
+            <tr>
+              <th colSpan="2">EEO and Diversity:</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>Gender:</td>
               <td>{formData.gender}</td>
@@ -131,14 +158,10 @@ const Step6 = ({ formData, handlePrev, handleConfirm }) => {
         </Table>
 
         <div style={{ marginTop: "15px" }}>
-          <Button variant="warning" className="prev-step" onClick={handlePrev}>
+          <Button variant="warning" className="prev-step" onClick={handlePrev} type="button">
             Previous
           </Button>
-          <Button
-            variant="primary"
-            className="next-step mx-3"
-            onClick={handleConfirm}
-          >
+          <Button variant="primary" className="next-step mx-3" onClick={handleConfirm} type="button">
             Confirm & Submit
           </Button>
         </div>

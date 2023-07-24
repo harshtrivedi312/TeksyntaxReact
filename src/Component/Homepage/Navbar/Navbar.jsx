@@ -31,7 +31,7 @@ function Navigation() {
               </Nav.Link>
              
               <NavDropdown title="For Student" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Login</NavDropdown.Item>
+                <NavDropdown.Item href="/login/StudentLogin">Login</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Student Resources
                 </NavDropdown.Item>
@@ -51,18 +51,16 @@ function Navigation() {
                   Get in touch
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="About" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">About Us</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Our Acheivements
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Our Team</NavDropdown.Item>
-              </NavDropdown>
-              <NavDropdown title="Login" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#action/3.2">
+              <NavDropdown title="For Employee" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="/login/EmployeeLogin">
                   Employee Login
                 </NavDropdown.Item>
               </NavDropdown>
+              <NavDropdown title="About" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="/About/AboutUs">About Us</NavDropdown.Item>
+                <NavDropdown.Item href="/About/Team">Our Team</NavDropdown.Item>
+              </NavDropdown>
+              
             </Nav>
           </Navbar.Collapse>
         

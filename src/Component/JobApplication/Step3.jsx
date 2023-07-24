@@ -27,8 +27,9 @@ const Step3 = ({ formData, handleChange, handleNext, handlePrev }) => {
     handlePrev();
   };
 
-  const handleNextStepClick = () => {
-    handleNext();
+  const handleNextStepClick = (e) => {
+    e.preventDefault();  // Prevent default form submission
+  handleNext();
   };
 
   return (
@@ -95,7 +96,6 @@ const Step3 = ({ formData, handleChange, handleNext, handlePrev }) => {
             type="file"
             name="resume"
             onChange={handleResumeChange}
-            required
           />
         </Form.Group>
 
@@ -133,8 +133,8 @@ const Step3 = ({ formData, handleChange, handleNext, handlePrev }) => {
 // Define prop types
 Step3.propTypes = {
   formData: PropTypes.shape({
-    resume: PropTypes.string.isRequired,
-    coverLetter: PropTypes.string.isRequired,
+    resume: PropTypes.string,
+    coverLetter: PropTypes.string,
     company: PropTypes.string.isRequired,
     position: PropTypes.string.isRequired,
     years: PropTypes.string.isRequired,
