@@ -11,7 +11,7 @@ const ImageMarquee = () => {
 
   return (
     <div className="image-marquee-container">
-      <h2 className="text-center">Our Clients</h2>
+      <h2 className="text-center my-3" style={{color:'darkgray'}}><strong>Our Clients / Partners</strong></h2>
       <div className="image-marquee-content">
         {images.length > 0 &&
           images.map((imageUrl, index) => (

@@ -1,8 +1,8 @@
 import React from "react";
-import Navigation from "../Homepage/Navbar/Navbar";
-import Footer from "../Homepage/Footer/Footer";
+import Navigation from "../../Homepage/Navbar/Navbar";
+import Footer from "../../Homepage/Footer/Footer";
 
-export default function JavaCourse() {
+export default function QualityAssuranceAutomationCourse() {
   return (
     <div>
       <section>
@@ -10,18 +10,18 @@ export default function JavaCourse() {
       </section>
       <header
         style={{
-          backgroundColor: "#89B7E0",
-          display: "flex",
+           backgroundColor: "#4FD2CC",
+           display: "flex",
           alignItems: "center",
         }}
       >
         {/* Left side content */}
         <div style={{ flex: 1, paddingLeft: "50px" }}>
-          <div className="text-white">
-            <h1 className="mb-3">Java Development Course</h1>
+          <div className="text-dark">
+            <h1 className="mb-3">Heading</h1>
             <h4 className="mb-3">Subheading</h4>
-            <a className="btn btn-outline-light btn-lg" href="#!" role="button">
-              Enroll Now
+            <a className="btn btn-outline-dark btn-lg" href="#!" role="button">
+              Call to action
             </a>
           </div>
         </div>
@@ -31,8 +31,8 @@ export default function JavaCourse() {
           className="p-5"
           style={{
             backgroundImage:
-              "url('https://downloader.la/temp/[Downloader.la]-64bd90ba5abaa.jpg')",
-            height: 500,
+              "url('https://downloader.la/temp/[Downloader.la]-64bda4c81a6ce.jpg')",
+            height: 600,
             flex: 1,
             backgroundSize: "cover",
             backgroundPosition: "center",

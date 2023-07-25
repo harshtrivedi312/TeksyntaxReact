@@ -1,8 +1,8 @@
 import React from "react";
-import Navigation from "../Homepage/Navbar/Navbar";
-import Footer from "../Homepage/Footer/Footer";
+import Navigation from "../../Homepage/Navbar/Navbar";
+import Footer from "../../Homepage/Footer/Footer";
 
-export default function DataAnalystCourse() {
+export default function DevOpsCourse() {
   return (
     <div>
       <section>
@@ -31,8 +31,8 @@ export default function DataAnalystCourse() {
           className="p-5"
           style={{
             backgroundImage:
-              "url('https://downloader.la/temp/[Downloader.la]-64bd980e82cbd.jpg')",
-            height: 400,
+              "url('https://downloader.la/temp/[Downloader.la]-64bd95af72038.jpg')",
+            height: 600,
             flex: 1,
             backgroundSize: "cover",
             backgroundPosition: "center",

@@ -7,7 +7,7 @@
     "schedule": "Morning",
     "format": "In-Class",
     "link": "/course/1",
-    "image": "https://downloader.la/temp/[Downloader.la]-64be9181d4612.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/javaDeveloper.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -18,7 +18,7 @@
     "schedule": "Afternoon",
     "format": "Online",
     "link": "/course/1",
-    "image": "https://downloader.la/temp/[Downloader.la]-64be9181d4612.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/javaDeveloper.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -29,7 +29,7 @@
     "schedule": "Morning",
     "format": "In-Class",
     "link": "/course/2",
-    "image": "https://ecodesoft.com/wp-content/uploads/2021/02/React-development-banner1.png",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/ReactDevelopment.webp",
     "description": "This is the description for Topic 1"
   },
   {
@@ -40,7 +40,7 @@
     "schedule": "Afternoon",
     "format": "Online",
     "link": "/course/2",
-    "image": "https://ecodesoft.com/wp-content/uploads/2021/02/React-development-banner1.png",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/ReactDevelopment.webp",
     "description": "This is the description for Topic 1"
   },
   {
@@ -51,7 +51,7 @@
     "schedule": "Afternoon",
     "format": "In-Class",
     "link": "/course/3",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd93e8500.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/DevOps.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -62,7 +62,7 @@
     "schedule": "Afternoon",
     "format": "Online",
     "link": "/course/3",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd93e8500.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/DevOps.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -73,7 +73,7 @@
     "schedule": "Evening",
     "format": "Online",
     "link": "/course/4",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbf02bed5c.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/BusinessAnalyst.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -84,7 +84,7 @@
     "schedule": "Evening",
     "format": "In-Class",
     "link": "/course/4",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbf02bed5c.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/BusinessAnalyst.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -95,7 +95,7 @@
     "schedule": "Evening",
     "format": "Online",
     "link": "/course/5",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbeb5eaf5c.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/ProjectManager.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -106,7 +106,7 @@
     "schedule": "Evening",
     "format": "In-Class",
     "link": "/course/5",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbeb5eaf5c.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/ProjectManager.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -117,7 +117,7 @@
     "schedule": "Evening",
     "format": "In-Class",
     "link": "/course/6",
-    "image": "https://downloader.la/temp/[Downloader.la]-64be9ce992f62.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/dataAnalyst.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -128,7 +128,7 @@
     "schedule": "Evening",
     "format": "Online",
     "link": "/course/6",
-    "image": "https://downloader.la/temp/[Downloader.la]-64be9ce992f62.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/dataAnalyst.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -150,7 +150,7 @@
     "schedule": "Morning",
     "format": "Online",
     "link": "/course/8",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd02c80ea.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -161,7 +161,7 @@
     "schedule": "Evening",
     "format": "Online",
     "link": "/course/8",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd02c80ea.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -172,7 +172,7 @@
     "schedule": "Afternoon",
     "format": "Online",
     "link": "/course/8",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd02c80ea.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -183,7 +183,7 @@
     "schedule": "Morning",
     "format": "In-Class",
     "link": "/course/8",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd02c80ea.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -194,7 +194,7 @@
     "schedule": "Evening",
     "format": "In-Class",
     "link": "/course/8",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd02c80ea.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -205,7 +205,7 @@
     "schedule": "Afternoon",
     "format": "In-Class",
     "link": "/course/8",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbd02c80ea.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg",
     "description": "This is the description for Topic 1"
   },
   {
@@ -216,7 +216,7 @@
     "schedule": "Afternoon",
     "format": "Online",
     "link": "/course/9",
-    "image": "https://downloader.la/temp/[Downloader.la]-64bcbe12661ef.jpg",
+    "image": "https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/UIUX.jpg",
     "description": "This is the description for Topic 1"
   }
 ]

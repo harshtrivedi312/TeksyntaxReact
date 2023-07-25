@@ -1,6 +1,6 @@
 import React from "react";
-import Navigation from "../Homepage/Navbar/Navbar";
-import Footer from "../Homepage/Footer/Footer";
+import Navigation from "../../Homepage/Navbar/Navbar";
+import Footer from "../../Homepage/Footer/Footer";
 
 export default function DataETLCourse() {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
-import Navigation from "../Homepage/Navbar/Navbar";
-import Footer from "../Homepage/Footer/Footer";
+import Navigation from "../../Homepage/Navbar/Navbar";
+import Footer from "../../Homepage/Footer/Footer";
 
-export default function ProjectManagerCourse() {
+export default function DataAnalystCourse() {
   return (
     <div>
       <section>
@@ -10,17 +10,17 @@ export default function ProjectManagerCourse() {
       </section>
       <header
         style={{
-          backgroundColor: "#CDDCFE",
+          backgroundColor: "#FFFFFF",
           display: "flex",
           alignItems: "center",
         }}
       >
         {/* Left side content */}
         <div style={{ flex: 1, paddingLeft: "50px" }}>
-          <div className="text-white">
+          <div className="text-dark">
             <h1 className="mb-3">Heading</h1>
             <h4 className="mb-3">Subheading</h4>
-            <a className="btn btn-outline-light btn-lg" href="#!" role="button">
+            <a className="btn btn-outline-dark btn-lg" href="#!" role="button">
               Call to action
             </a>
           </div>
@@ -31,10 +31,10 @@ export default function ProjectManagerCourse() {
           className="p-5"
           style={{
             backgroundImage:
-              "url('https://downloader.la/temp/[Downloader.la]-64bd91c406c87.jpg')",
+              "url('https://downloader.la/temp/[Downloader.la]-64bd980e82cbd.jpg')",
             height: 400,
-            backgroundSize:"cover",
             flex: 1,
+            backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >

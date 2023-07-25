@@ -1,8 +1,8 @@
 import React from "react";
-import Navigation from "../Homepage/Navbar/Navbar";
-import Footer from "../Homepage/Footer/Footer";
+import Navigation from "../../Homepage/Navbar/Navbar";
+import Footer from "../../Homepage/Footer/Footer";
 
-export default function QualityAssuranceAutomationCourse() {
+export default function UIUXCourse() {
   return (
     <div>
       <section>
@@ -10,8 +10,8 @@ export default function QualityAssuranceAutomationCourse() {
       </section>
       <header
         style={{
-           backgroundColor: "#4FD2CC",
-           display: "flex",
+          backgroundColor: "blue",
+          display: "flex",
           alignItems: "center",
         }}
       >
@@ -31,8 +31,8 @@ export default function QualityAssuranceAutomationCourse() {
           className="p-5"
           style={{
             backgroundImage:
-              "url('https://downloader.la/temp/[Downloader.la]-64bda4c81a6ce.jpg')",
-            height: 600,
+              "url('https://downloader.la/temp/[Downloader.la]-64bd9ab2b8e26.jpg')",
+            height: 400,
             flex: 1,
             backgroundSize: "cover",
             backgroundPosition: "center",

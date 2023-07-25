@@ -3,19 +3,20 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './Component/Homepage/HomePageRender/Homepage';
 import JobApplicationForm from '../src/Component/JobApplication/JobApplicationForm';
 import FindCourses from '../src/Component/FindCourses/courses';
-import JavaCourse from './Component/ALLCoueses/JavaCourse';
-import ReactCourse from './Component/ALLCoueses/ReactCourse';
-import BusinessAnalystCourse from './Component/ALLCoueses/BusinessAnalystCourse';
-import DataAnalystCourse from './Component/ALLCoueses/DataAnalystCourse';
-import DataETLCourse from './Component/ALLCoueses/DataETLCourse';
-import DevOPSCourse from './Component/ALLCoueses/DevOpsCourse';
-import ProjectManagementCourse from './Component/ALLCoueses/ProjectManagerCourse';
-import QualityAssuranceAutomationCourse from './Component/ALLCoueses/QualityAssuranceAutomationCourse';
-import UIUXCourse from './Component/ALLCoueses/UIUXCourse';
+import JavaCourse from './Component/ALLCoueses/java/JavaCourse';
+import ReactCourse from './Component/ALLCoueses/react/ReactCourse';
+import BusinessAnalystCourse from './Component/ALLCoueses/BA/BusinessAnalystCourse';
+import DataAnalystCourse from './Component/ALLCoueses/DataAnalyst/DataAnalystCourse';
+import DataETLCourse from './Component/ALLCoueses/ETL/DataETLCourse';
+import DevOPSCourse from './Component/ALLCoueses/Devops/DevOpsCourse';
+import ProjectManagementCourse from './Component/ALLCoueses/PM/ProjectManagerCourse';
+import QualityAssuranceAutomationCourse from './Component/ALLCoueses/QA/QualityAssuranceAutomationCourse';
+import UIUXCourse from './Component/ALLCoueses/UIUX/UIUXCourse';
 import AboutUs from './Component/About/AboutUs';
 import EmployeeLogin from './Component/LoginPage/employeeLogin';
 import StudentLogin from './Component/LoginPage/StudentLogin';
 import StudentRegistration from './Component/LoginPage/StudentRegistration';
+import Team from './Component/About/Team';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path='/login/EmployeeLogin' element={<EmployeeLogin/>}/>
           <Route path='/login/StudentLogin' element={<StudentLogin/>}/>
           <Route path='/login/StudentLogin/StudentRegister' element={<StudentRegistration/>}/>
+          <Route path='/About/Team' element={<Team/>}/>
         </Routes>
       </div>
     </Router>
