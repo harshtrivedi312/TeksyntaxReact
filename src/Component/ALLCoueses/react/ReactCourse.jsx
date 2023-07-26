@@ -66,6 +66,7 @@ export default function ReactCourse() {
           <Admission />
         </div>
       </div>
+
       <section>
         <Footer/>
       </section>

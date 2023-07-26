@@ -5,6 +5,8 @@ import SecondNavigation from "../reusable/SecondNavi";
 import CourseInfo from "../reusable/courseInfo";
 import CourseModules from "../reusable/courseModules";
 import Admission from "../reusable/admissionProcess";
+import Financing from "../reusable/Financing";
+import FAQ from '../reusable/FrequentQuestion';
 
 export default function JavaCourse() {
   return (
@@ -17,6 +19,8 @@ export default function JavaCourse() {
           backgroundColor: "#FFFFFF",
           display: "flex",
           alignItems: "center",
+          padding: "20px",
+          marginTop: 50,
         }}
       >
         {/* Left side content */}
@@ -46,7 +50,8 @@ export default function JavaCourse() {
           style={{
             backgroundImage:
               "url('https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/javaDeveloper.jpg')",
-            height: 500,
+            height: "800px",
+            padding: 15,
             flex: 1,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -66,13 +71,20 @@ export default function JavaCourse() {
           <CourseInfo />
         </section>
         <CourseModules />
-        <div className="my-4">
+        <section className="my-4">
           <Admission />
-        </div>
+        </section>
+        <section>
+          <Financing />
+        </section>
+        <section className="my-4">
+        <FAQ/>
+        </section>
+
+        <section>
+          <Footer />
+        </section>
       </div>
-      <section>
-        <Footer />
-      </section>
     </div>
   );
 }

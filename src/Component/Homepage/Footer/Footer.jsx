@@ -121,7 +121,7 @@ const Footer = () => {
                     <li><a href="http://teksyntaxinc.com/">Services</a></li>
                     <li><a href="http://teksyntaxinc.com/">Careers</a></li>
                     <li><a href="http://teksyntaxinc.com/">Blog</a></li>
-                    <li><a href="http://teksyntaxinc.com/">FAQ&apos;s</a></li>
+                    <li><a href="/FAQ">FAQ&apos;s</a></li>
                   </ul>
                 </div>
               </div>

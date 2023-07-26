@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Make sure to import Bootstrap 
 
 const FullWidthCard = () => {
   return (
-    <div className="container-fluid">
-        <div className="card h-100">
+    <div className="container">
+        <div className="card h-100 p-4">
       <div className="d-flex flex-column justify-content-center align-items-center">
       <h3 className="card-title">
                 How to apply to our Web Development bootcamp

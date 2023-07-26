@@ -39,11 +39,11 @@ function courseModules() {
                   <p>{selectedModule.hours}</p>
                   <p>{selectedModule.description}</p>
                   <ul>
-                    <li>{selectedModule.descriptionbullet}</li>
+                    <li className='overflow-auto p-3'>{selectedModule.descriptionbullet}</li>
                   </ul>
                 </div>
                 <div className="bg-warning rounded p-2">
-                  <h2 className="ms-2">{selectedModule.warning}</h2>
+                  <h2 className="ms-2 overflow-auto p-3">{selectedModule.warning}</h2>
                   <ul>
                     <li>{selectedModule.warningBullet}</li>
                   </ul>

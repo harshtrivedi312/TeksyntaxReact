@@ -17,6 +17,7 @@ import EmployeeLogin from './Component/LoginPage/employeeLogin';
 import StudentLogin from './Component/LoginPage/StudentLogin';
 import StudentRegistration from './Component/LoginPage/StudentRegistration';
 import Team from './Component/About/Team';
+import FAQ from './Component/About/Questions';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path='/login/StudentLogin' element={<StudentLogin/>}/>
           <Route path='/login/StudentLogin/StudentRegister' element={<StudentRegistration/>}/>
           <Route path='/About/Team' element={<Team/>}/>
+          <Route path='/FAQ' element={<FAQ/>}/>
         </Routes>
       </div>
     </Router>
