@@ -1,6 +1,12 @@
 import React from "react";
 import Navigation from "../../Homepage/Navbar/Navbar";
 import Footer from "../../Homepage/Footer/Footer";
+import SecondNavi from "../reusable/SecondNavi";
+import QACourseInfo from "./QACourseInfo";
+import Modules from "./ReactCourseModules";
+import Financing from "../../../Component/ALLCoueses/reusable/Financing";
+import Admissions from "../../../Component/ALLCoueses/reusable/admissionProcess";
+import Faq from "../../../Component/ALLCoueses/reusable/FrequentQuestion";
 
 export default function QualityAssuranceAutomationCourse() {
   return (
@@ -10,18 +16,27 @@ export default function QualityAssuranceAutomationCourse() {
       </section>
       <header
         style={{
-           backgroundColor: "#4FD2CC",
-           display: "flex",
+          backgroundColor: "white",
+          display: "flex",
           alignItems: "center",
         }}
       >
         {/* Left side content */}
-        <div style={{ flex: 1, paddingLeft: "50px" }}>
+        <div className="my-4" style={{ flex: 1, paddingLeft: "50px" }}>
           <div className="text-dark">
-            <h1 className="mb-3">Heading</h1>
-            <h4 className="mb-3">Subheading</h4>
+            <h1 className="mb-3">QA Test Automation (SDET) course</h1>
+            <h4 className="mb-3">
+              Learn the latest and greatest from Automation Testing World
+            </h4>
+            <a
+              className="btn btn-outline-dark btn-lg mx-2"
+              href="/Enroll/Application"
+              role="button"
+            >
+              Enroll now
+            </a>
             <a className="btn btn-outline-dark btn-lg" href="#!" role="button">
-              Call to action
+              view Syllabus
             </a>
           </div>
         </div>
@@ -31,8 +46,8 @@ export default function QualityAssuranceAutomationCourse() {
           className="p-5"
           style={{
             backgroundImage:
-              "url('https://downloader.la/temp/[Downloader.la]-64bda4c81a6ce.jpg')",
-            height: 600,
+              "url('https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/QAICON.jpg')",
+            height: 950,
             flex: 1,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -44,9 +59,29 @@ export default function QualityAssuranceAutomationCourse() {
           ></div>
         </div>
       </header>
-      <section>
-        <Footer/>
-      </section>
+      <div>
+        <section>
+          <SecondNavi />
+        </section>
+        <section>
+          <QACourseInfo />
+        </section>
+        <section>
+          <Modules />
+        </section>
+        <section className="my-4">
+          <Admissions />
+        </section>
+        <section className="my-4">
+          <Financing />
+        </section>
+        <section className="my-4">
+          <Faq />
+        </section>
+        <section>
+          <Footer />
+        </section>
+      </div>
     </div>
   );
 }

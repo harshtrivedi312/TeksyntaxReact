@@ -24,7 +24,7 @@ app.post('/api/subscribe', (req, res) => {
     return res.status(400).json({ error: 'Email is required.' });
   }
 
-  const query = 'INSERT INTO studentSubscription (email) VALUES ($1) RETURNING *';
+  const query = 'INSERT INTO studentSubscription (email) VALUES ($1) ';
 
   pool
     .query(query, [email])

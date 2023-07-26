@@ -1,11 +1,12 @@
 import React from "react";
 import Navigation from "../../Homepage/Navbar/Navbar";
 import Footer from "../../Homepage/Footer/Footer";
-import SecondNavigation from '../reusable/SecondNavi';
-import CourseInfo from '../reusable/courseInfo';
-import CourseModules from '../reusable/courseModules'; 
-import Admission from '../reusable/admissionProcess'; 
-
+import SecondNavigation from "../reusable/SecondNavi";
+import CourseInfo from "./ReactCourseInfo";
+import CourseModules from "../java/JavacourseModules";
+import Admission from "../reusable/admissionProcess";
+import Financing from "../reusable/Financing";
+import FAQ from "../reusable/FrequentQuestion";
 
 export default function ReactCourse() {
   return (
@@ -18,19 +19,33 @@ export default function ReactCourse() {
           backgroundColor: "white",
           display: "flex",
           alignItems: "center",
-          height:"690px",
+          height: "690px",
         }}
       >
         {/* Left side content */}
         <div style={{ flex: 1, paddingLeft: "50px" }}>
           <div className="text-secondary">
             <p>LEARN FROM THE INDUSTRY&apos;S TOP TALLENT</p>
-            <h1 className="mb-3"><strong>React JS Course</strong></h1>
-            <h4 className="mb-3">Expand your React programming skills, and boost your profile on the job market. Learn to build sophisticated, scalable web applications.</h4>
-            <a className="btn btn-outline-secondary btn-lg mx-3" href="#!" role="button">
-              Enroll Now 
+            <h1 className="mb-3">
+              <strong>React JS Course</strong>
+            </h1>
+            <h4 className="mb-3">
+              Expand your React programming skills, and boost your profile on
+              the job market. Learn to build sophisticated, scalable web
+              applications.
+            </h4>
+            <a
+              className="btn btn-outline-secondary btn-lg mx-3"
+              href="#!"
+              role="button"
+            >
+              Enroll Now
             </a>
-            <a className="btn btn-outline-secondary btn-lg" href="#!" role="button">
+            <a
+              className="btn btn-outline-secondary btn-lg"
+              href="#!"
+              role="button"
+            >
               View Syllabus
             </a>
           </div>
@@ -42,10 +57,10 @@ export default function ReactCourse() {
           style={{
             backgroundImage:
               "url('https://teksyntaxwebimages.s3.amazonaws.com/images/OtherImages/ReactDevelopment.webp')",
-            height: '681px',
+            height: "681px",
             flex: 1,
             backgroundPosition: "center",
-            backgroundRepeat:"no-repeat"
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div
@@ -66,9 +81,14 @@ export default function ReactCourse() {
           <Admission />
         </div>
       </div>
-
       <section>
-        <Footer/>
+        <Financing />
+      </section>
+      <section className="my-4">
+        <FAQ />
+      </section>
+      <section>
+        <Footer />
       </section>
     </div>
   );

@@ -18,6 +18,7 @@ import StudentLogin from './Component/LoginPage/StudentLogin';
 import StudentRegistration from './Component/LoginPage/StudentRegistration';
 import Team from './Component/About/Team';
 import FAQ from './Component/About/Questions';
+import Enrollment from './Component/EnrollmentForm/EnrolmentCard'
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path='/login/StudentLogin/StudentRegister' element={<StudentRegistration/>}/>
           <Route path='/About/Team' element={<Team/>}/>
           <Route path='/FAQ' element={<FAQ/>}/>
+          <Route path='/Enroll/Application' element={<Enrollment/>}/>
         </Routes>
       </div>
     </Router>
